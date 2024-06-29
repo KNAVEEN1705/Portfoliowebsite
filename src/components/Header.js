@@ -1,0 +1,32 @@
+import {Bars3Icon } from '@heroicons/react/24/solid'
+import { useState } from 'react'
+export default function Header()
+{
+    const[toggleMenu,setToggleMenu]=useState(false)
+    return <header className="flex justify-between px-5 py-3 bg-primary">
+        <a className='font-bold text-black' href="#">NAVEEN.K</a>
+        <nav className='hidden md:block'>
+        <ul className="flex">
+            <li><a href="/">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#project">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+            
+        </ul>
+        </nav>
+        { toggleMenu &&
+            <nav className='block md:hidden '>
+            <ul onClick={()=>setToggleMenu(!toggleMenu)} className="flex flex-col mobile-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="# contact">Contact</a></li>
+            </ul>
+            </nav>
+        }
+        <button className='block md:hidden' onClick={()=>setToggleMenu(!toggleMenu)}><Bars3Icon className='text-black h-6'/></button>
+        
+    </header>
+}
