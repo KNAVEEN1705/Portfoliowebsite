@@ -1,13 +1,13 @@
 import resume from '../assests/resume.gif';
-import clickme from '../assests/clikeme.gif'
+import clickme from '../assests/clikeme.gif';
 
 export default function Resume() {
-  const PDF_FILE_URL = 'http://localhost:3000/../assestclickme.pdf';
+  const PDF_FILE_URL = 'https://example.com/resume.pdf'; // Update this URL to point to your PDF file
 
   const downloadFileAtUrl = (url) => {
     const filename = url.split('/').pop();
     const aTag = document.createElement('a');
-    aTag.href = url;  // Corrected 'herf' to 'href'
+    aTag.href = url;
     aTag.setAttribute('download', filename);
     document.body.appendChild(aTag);
     aTag.click();
